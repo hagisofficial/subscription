@@ -1,0 +1,101 @@
+'use client'
+
+import { useRef, useState, useEffect } from 'react'
+import MuxVideo from '@mux/mux-video-react'
+import { useTranslations } from 'next-intl'
+
+import Header from '@/components/Header'
+import NewsletterForm from '@/components/NewsletterForm'
+import IconSound from '@/components/icons/icon-sound'
+
+import { MUX_PLAYBACK_IDS, MUX_THUMBNAILS } from '@/constants/mux'
+
+const Home = () => {
+  const t = useTranslations('home')
+
+  const desktopVideoRef = useRef<HTMLVideoElement>(null)
+  const mobileVideoRef = useRef<HTMLVideoElement>(null)
+
+  const [isMuted, setIsMuted] = useState(true)
+
+  useEffect(() => {
+    desktopVideoRef.current?.play().catch(() => {})
+    mobileVideoRef.current?.play().catch(() => {})
+  }, [])
+
+  useEffect(() => {
+    if (desktopVideoRef.current) desktopVideoRef.current.muted = isMuted
+    if (mobileVideoRef.current) mobileVideoRef.current.muted = isMuted
+  }, [isMuted])
+
+  return (
+    <main className="relative w-full h-[100dvh] overflow-hidden">
+      <Header variant="light" />
+
+      <div className="absolute inset-0 hidden lg:block">
+        <MuxVideo
+          ref={desktopVideoRef}
+          playbackId={MUX_PLAYBACK_IDS.desktop}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster={MUX_THUMBNAILS.desktop}
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black-12" />
+      </div>
+
+      <div className="absolute inset-0 lg:hidden">
+        <MuxVideo
+          ref={mobileVideoRef}
+          playbackId={MUX_PLAYBACK_IDS.mobile}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster={MUX_THUMBNAILS.mobile}
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black-12" />
+      </div>
+
+      <div className="relative flex flex-col items-center justify-center h-full px-[1.6vw] z-10">
+        <div className="flex flex-col items-center">
+          <h1 className="font-serif text-[8.4vw] lg:text-[4vw] text-cream-100 leading-[1] lg:leading-[0.9] text-center uppercase max-w-[60vw] lg:max-w-[25vw] mb-[60px]">
+            {t('headline')}
+          </h1>
+
+          <NewsletterForm />
+        </div>
+      </div>
+
+      <div className="absolute bottom-0 left-0 right-0 flex items-center py-[32px] px-[1.6vw] z-20">
+        <a
+          href="#"
+          className="group absolute left-1/2 -translate-x-1/2 flex flex-col items-start gap-[8px]"
+        >
+          <span className="font-sans text-[11px] uppercase leading-none tracking-[1.1px] text-cream-100">
+            {t('cta')}
+          </span>
+          <span className="h-[1px] w-full bg-cream-100 transition-opacity group-hover:opacity-70" />
+        </a>
+
+        <button
+          onClick={() => setIsMuted(!isMuted)}
+          className="ml-auto flex items-center gap-[12px]"
+          aria-label={isMuted ? 'Unmute video' : 'Mute video'}
+        >
+          <span className="font-sans text-[11px] leading-[1.3] text-cream-100/90">
+            {isMuted ? 'Sound on' : 'Sound off'}
+          </span>
+          <IconSound className="text-cream-100" />
+        </button>
+      </div>
+    </main>
+  )
+}
+
+export default Home

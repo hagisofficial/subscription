@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * Custom base styles
+ */
+@layer base {
+  html,
+  body {
+    @apply bg-cream-100 font-sans text-black-100;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overscroll-behavior: none;
+  }
+
+  svg {
+    width: 100%;
+    height: auto;
+  }
+
+  ::selection {
+    @apply bg-burgundy-100 text-white-100;
+  }
+}
+
+/**
+ * Custom component styles
+ */
+@layer components {
+}
+
+/**
+ * Custom utility styles
+ */
+@layer utilities {
+}

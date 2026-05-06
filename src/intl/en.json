@@ -1,0 +1,21 @@
+{
+  "header": {},
+  "footer": {},
+  "not_found": {
+    "title": "Page not found"
+  },
+  "home": {
+    "headline": "An Odyssey to Bedouin Heritage",
+    "subtitle_line_1": "Be the first to know when",
+    "subtitle_line_2": "Hagi's Grooming Palette arrives.",
+    "placeholder": "Email Address",
+    "submit": "Subscribe",
+    "terms_prefix": "I agree to the",
+    "terms_link": "Terms and conditions",
+    "terms_suffix": "of Hagi's",
+    "cta": "Continue to Barbering Site"
+  },
+  "terms_and_conditions": {
+    "title": "Terms and Conditions"
+  }
+}
