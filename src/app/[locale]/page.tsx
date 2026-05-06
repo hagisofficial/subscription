@@ -91,7 +91,7 @@ const Home = () => {
           <span className="font-sans text-[11px] leading-[1.3] text-cream-100/90">
             {isMuted ? 'Sound on' : 'Sound off'}
           </span>
-          <IconSound className="text-cream-100" />
+          <IconSound className="text-cream-100 w-[12px]" />
         </button>
       </div>
     </main>
