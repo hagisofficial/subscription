@@ -7,7 +7,7 @@ const TermsEN = () => (
       &ldquo;our&rdquo; or &ldquo;us&rdquo;).
     </p>
     <p>
-      <strong>Company Details:</strong>
+      <p>Company Details:</p>
       <br />
       Hagi&rsquo;s Grooming GmbH
       <br />

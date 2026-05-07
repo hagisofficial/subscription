@@ -7,7 +7,7 @@ const TermsDE = () => (
       &bdquo;Unternehmen&ldquo;).
     </p>
     <p>
-      <strong>Unternehmensdaten:</strong>
+      <p>Unternehmensdaten:</p>
       <br />
       Hagi&rsquo;s Grooming GmbH
       <br />
