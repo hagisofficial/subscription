@@ -1,5 +1,5 @@
 import { FC, ReactNode } from 'react'
-import { Playfair_Display, DM_Sans } from 'next/font/google'
+import localFont from 'next/font/local'
 import { notFound } from 'next/navigation'
 import { NextIntlClientProvider, hasLocale } from 'next-intl'
 import { getMessages } from 'next-intl/server'
@@ -8,14 +8,18 @@ import { routing } from '@/i18n/routing'
 
 import '@/styles/globals.css'
 
-const playfairDisplay = Playfair_Display({
-  subsets: ['latin', 'latin-ext'],
+const roxborough = localFont({
+  src: '../../../public/assets/RoxboroughCF-Thin.woff2',
+  weight: '100',
+  style: 'normal',
   variable: '--font-serif',
   display: 'swap',
 })
 
-const dmSans = DM_Sans({
-  subsets: ['latin', 'latin-ext'],
+const gtAmerica = localFont({
+  src: '../../../public/assets/subset-GTAmerica-Medium.woff2',
+  weight: '500',
+  style: 'normal',
   variable: '--font-sans',
   display: 'swap',
 })
@@ -49,7 +53,7 @@ const RootLayout: FC<RootLayoutProps> = async ({ children, params }) => {
   return (
     <html
       lang={locale}
-      className={`${playfairDisplay.variable} ${dmSans.variable}`}
+      className={`${roxborough.variable} ${gtAmerica.variable}`}
     >
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>

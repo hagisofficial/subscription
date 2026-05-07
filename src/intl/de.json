@@ -15,7 +15,9 @@
     "terms_prefix": "Ich stimme den",
     "terms_link": "Allgemeinen Geschäftsbedingungen",
     "terms_suffix": "von Hagi's zu",
-    "cta": "Weiter zur Barbershop-Seite"
+    "cta": "Weiter zur Barbershop-Seite",
+    "success": "Danke, Sie stehen auf der Liste.",
+    "error": "Etwas ist schief gelaufen. Bitte versuchen Sie es erneut."
   },
   "terms_and_conditions": {
     "title": "Allgemeine Geschäftsbedingungen"

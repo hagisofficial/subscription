@@ -12,12 +12,57 @@ const NewsletterForm: FC = () => {
 
   const [email, setEmail] = useState('')
   const [agreed, setAgreed] = useState(false)
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
 
-    if (!email || !agreed) return
-    // TODO: integrate newsletter API
+    if (!email || !agreed || status === 'loading') return
+
+    setStatus('loading')
+
+    try {
+      const companyId = process.env.NEXT_PUBLIC_KLAVIYO_PUBLIC_API_KEY
+      const listId = process.env.NEXT_PUBLIC_KLAVIYO_LIST_ID
+
+      const res = await fetch(
+        `https://a.klaviyo.com/client/subscriptions/?company_id=${companyId}`,
+        {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            Revision: '2024-10-15',
+          },
+          body: JSON.stringify({
+            data: {
+              type: 'subscription',
+              attributes: {
+                profile: {
+                  data: {
+                    type: 'profile',
+                    attributes: { email },
+                  },
+                },
+              },
+              relationships: {
+                list: {
+                  data: { type: 'list', id: listId },
+                },
+              },
+            },
+          }),
+        },
+      )
+
+      if (!res.ok) throw new Error('Subscribe failed')
+
+      setStatus('success')
+      setEmail('')
+      setAgreed(false)
+    } catch {
+      setStatus('error')
+    }
   }
 
   return (
@@ -43,12 +88,24 @@ const NewsletterForm: FC = () => {
           />
           <button
             type="submit"
-            className="ml-[12px] shrink-0 text-cream-100 transition-opacity hover:opacity-70"
+            disabled={status === 'loading'}
+            className="ml-[12px] shrink-0 text-cream-100 transition-opacity hover:opacity-70 disabled:opacity-40"
             aria-label={t('submit')}
           >
             <IconArrow className="h-[16px] w-[16px] text-white-100" />
           </button>
         </div>
+
+        {status === 'success' && (
+          <p className="font-sans text-[10px] leading-[1.3] text-cream-100">
+            {t('success')}
+          </p>
+        )}
+        {status === 'error' && (
+          <p className="font-sans text-[10px] leading-[1.3] text-cream-100">
+            {t('error')}
+          </p>
+        )}
 
         <label className="flex cursor-pointer items-center gap-[8px]">
           <input

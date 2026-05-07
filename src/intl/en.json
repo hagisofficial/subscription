@@ -15,7 +15,9 @@
     "terms_prefix": "I agree to the",
     "terms_link": "Terms and conditions",
     "terms_suffix": "of Hagi's",
-    "cta": "Continue to Barbering Site"
+    "cta": "Continue to Barbering Site",
+    "success": "Thank you.",
+    "error": "Something went wrong."
   },
   "terms_and_conditions": {
     "title": "Terms and Conditions"
