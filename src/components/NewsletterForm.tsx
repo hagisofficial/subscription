@@ -108,13 +108,26 @@ const NewsletterForm: FC = () => {
         )}
 
         <label className="flex cursor-pointer items-center gap-[8px]">
-          <input
-            type="checkbox"
-            checked={agreed}
-            onChange={(e) => setAgreed(e.target.checked)}
-            className="h-[14px] w-[14px] shrink-0 appearance-none border border-white-100/40 bg-transparent checked:bg-white-100/20"
-          />
-          <span className="font-sans text-[10px] leading-[1.3] text-grey-100">
+          <span className="relative flex h-[14px] w-[14px] shrink-0 items-center justify-center">
+            <input
+              type="checkbox"
+              checked={agreed}
+              onChange={(e) => setAgreed(e.target.checked)}
+              className="peer h-full w-full appearance-none border border-white-100/40 bg-transparent checked:border-white-100 checked:bg-white-100"
+            />
+            <svg
+              viewBox="0 0 14 14"
+              className="pointer-events-none absolute hidden h-[10px] w-[10px] peer-checked:block"
+              fill="none"
+              stroke="black"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M3 7.5l2.5 2.5L11 4.5" />
+            </svg>
+          </span>
+          <span className="font-sans text-[10px] leading-[1.3] text-white-100">
             {t.rich('terms', {
               terms: (chunks) => (
                 <Link
