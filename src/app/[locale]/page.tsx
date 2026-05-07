@@ -11,66 +11,46 @@ import IconMute from '@/components/icons/icon-mute'
 
 import { MUX_PLAYBACK_IDS, MUX_THUMBNAILS } from '@/constants/mux'
 
+const DESKTOP_BREAKPOINT = 1024
+
 const Home = () => {
   const t = useTranslations('home')
 
-  const desktopVideoRef = useRef<HTMLVideoElement>(null)
-  const mobileVideoRef = useRef<HTMLVideoElement>(null)
+  const videoRef = useRef<HTMLVideoElement>(null)
 
+  const [isDesktop, setIsDesktop] = useState(false)
   const [isMuted, setIsMuted] = useState(true)
 
   useEffect(() => {
-    desktopVideoRef.current?.play().catch(() => {})
-    mobileVideoRef.current?.play().catch(() => {})
+    const update = () => setIsDesktop(window.innerWidth >= DESKTOP_BREAKPOINT)
+    update()
+    const observer = new ResizeObserver(update)
+    observer.observe(document.documentElement)
+    return () => observer.disconnect()
   }, [])
 
   useEffect(() => {
-    const mq = window.matchMedia('(min-width: 1200px)')
+    videoRef.current?.play().catch(() => {})
+  }, [isDesktop])
 
-    const applyMute = () => {
-      const isDesktop = mq.matches
-      if (desktopVideoRef.current) {
-        desktopVideoRef.current.muted = isDesktop ? isMuted : true
-      }
-      if (mobileVideoRef.current) {
-        mobileVideoRef.current.muted = isDesktop ? true : isMuted
-      }
-    }
-
-    applyMute()
-    mq.addEventListener('change', applyMute)
-    return () => mq.removeEventListener('change', applyMute)
-  }, [isMuted])
+  const playbackId = isDesktop ? MUX_PLAYBACK_IDS.desktop : MUX_PLAYBACK_IDS.mobile
+  const poster = isDesktop ? MUX_THUMBNAILS.desktop : MUX_THUMBNAILS.mobile
 
   return (
     <main className="relative w-full h-[100dvh] overflow-hidden">
       <Header variant="light" />
 
-      <div className="absolute inset-0 hidden lg:block">
+      <div className="absolute inset-0">
         <MuxVideo
-          ref={desktopVideoRef}
-          playbackId={MUX_PLAYBACK_IDS.desktop}
+          key={playbackId}
+          ref={videoRef}
+          playbackId={playbackId}
           autoPlay
-          muted
+          muted={isMuted}
           loop
           playsInline
           preload="auto"
-          poster={MUX_THUMBNAILS.desktop}
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black-12" />
-      </div>
-
-      <div className="absolute inset-0 lg:hidden">
-        <MuxVideo
-          ref={mobileVideoRef}
-          playbackId={MUX_PLAYBACK_IDS.mobile}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          poster={MUX_THUMBNAILS.mobile}
+          poster={poster}
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black-12" />

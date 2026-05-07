@@ -2,8 +2,8 @@ const getMuxThumbnail = (playbackId: string) =>
   `https://image.mux.com/${playbackId}/thumbnail.jpg?time=0`
 
 export const MUX_PLAYBACK_IDS = {
-  desktop: '015xBMupacr6R144pXV00tbVIMFh7ywUHiSXK007kFWh800',
-  mobile: '3reOyUwJg52BPcNf69KNQzMvegXBpUtcGngKMKn5DHE',
+  desktop: 'LwxMUah00zjUpk8dkpFTcKPGNPdwTzdO4S2Tk8HtEtUA',
+  mobile: '17329Yo00l56JCrEN1rOCQ6J200cDdcTSW9yy94gcYCr00',
 } as const
 
 export const MUX_THUMBNAILS = {
