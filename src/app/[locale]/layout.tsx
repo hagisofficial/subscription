@@ -32,6 +32,14 @@ const gtAmericaExtended = localFont({
   display: 'swap',
 })
 
+const gtAmericaRegular = localFont({
+  src: '../../../public/assets/subset-GTAmerica-Regular.woff2',
+  weight: '400',
+  style: 'normal',
+  variable: '--font-sans-regular',
+  display: 'swap',
+})
+
 export const metadata = {
   title: "Hagi's - Subscription",
   description: 'Subscribe to be the first to know when we launch.',
@@ -61,7 +69,7 @@ const RootLayout: FC<RootLayoutProps> = async ({ children, params }) => {
   return (
     <html
       lang={locale}
-      className={`${roxborough.variable} ${gtAmerica.variable} ${gtAmericaExtended.variable}`}
+      className={`${roxborough.variable} ${gtAmerica.variable} ${gtAmericaExtended.variable} ${gtAmericaRegular.variable}`}
     >
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>

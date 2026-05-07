@@ -34,8 +34,7 @@ const TermsAndConditions = ({ params }: TermsAndConditionsProps) => {
           <aside className="lg:w-[200px] lg:shrink-0 lg:sticky lg:top-[120px] lg:self-start max-lg:border-b max-lg:py-[24px] max-lg:border-black-12">
             <LegalNav />
           </aside>
-
-
+          
           <article
             className="
               flex-1 max-w-[760px] text-black-100 mx-auto
@@ -47,7 +46,7 @@ const TermsAndConditions = ({ params }: TermsAndConditionsProps) => {
               [&_h4]:font-sans [&_h4]:uppercase [&_h4]:text-[11px] [&_h4]:font-normal
               [&_h4]:tracking-[1.1px] [&_h4]:leading-[1.5] [&_h4]:text-black-100
               [&_h4]:mt-[24px] [&_h4]:mb-[8px]
-              [&_p]:font-sans [&_p]:text-[12px] [&_p]:font-normal
+              [&_p]:font-sans-regular [&_p]:text-[12px] [&_p]:font-normal
               [&_p]:leading-[1.6] [&_p]:text-darkgrey-100 [&_p]:mb-[16px]
               [&_ul]:list-disc [&_ul]:pl-[24px] [&_ul]:mb-[16px]
               [&_li]:font-sans [&_li]:text-[12px] [&_li]:font-normal

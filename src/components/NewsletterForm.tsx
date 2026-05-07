@@ -83,7 +83,7 @@ const NewsletterForm: FC = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder={t('placeholder')}
-            className="w-full bg-transparent font-sans text-[14px] leading-[1.5] text-white-100 placeholder:text-grey-100 focus:outline-none"
+            className="w-full bg-transparent font-sans text-[14px] leading-[1.5] text-white-100 placeholder:text-white-100 focus:outline-none"
             required
           />
           <button
@@ -97,12 +97,12 @@ const NewsletterForm: FC = () => {
         </div>
 
         {status === 'success' && (
-          <p className="font-sans text-[10px] leading-[1.3] text-cream-100">
+          <p className="font-sans-regular text-[10px] leading-[1.3] text-cream-100">
             {t('success')}
           </p>
         )}
         {status === 'error' && (
-          <p className="font-sans text-[10px] leading-[1.3] text-cream-100">
+          <p className="font-sans-regular text-[10px] leading-[1.3] text-cream-100">
             {t('error')}
           </p>
         )}
@@ -132,7 +132,7 @@ const NewsletterForm: FC = () => {
               terms: (chunks) => (
                 <Link
                   href="/terms-and-conditions"
-                  className="underline hover:text-cream-100"
+                  className="underline hover:text-cream-100 text-[#9A9A9A]"
                 >
                   {chunks}
                 </Link>
@@ -140,7 +140,7 @@ const NewsletterForm: FC = () => {
               privacy: (chunks) => (
                 <Link
                   href="/privacy-policy"
-                  className="underline hover:text-cream-100"
+                  className="underline hover:text-cream-100 text-[#9A9A9A]"
                 >
                   {chunks}
                 </Link>

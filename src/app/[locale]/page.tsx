@@ -7,6 +7,7 @@ import { useTranslations } from 'next-intl'
 import Header from '@/components/Header'
 import NewsletterForm from '@/components/NewsletterForm'
 import IconSound from '@/components/icons/icon-sound'
+import IconMute from '@/components/icons/icon-mute.tsx'
 
 import { MUX_PLAYBACK_IDS, MUX_THUMBNAILS } from '@/constants/mux'
 
@@ -78,6 +79,7 @@ const Home = () => {
       <div className="relative flex flex-col items-center justify-center h-full px-[1.6vw] z-10">
         <div className="flex flex-col items-center">
           <h1 className="font-serif text-[8.4vw] lg:text-[4vw] text-cream-100 leading-[1] lg:leading-[0.9] text-center uppercase mb-[60px]">
+          <span className="block">{t('headline_line_0')}</span>
             <span className="block">{t('headline_line_1')}</span>
             <span className="block">{t('headline_line_2')}</span>
             <span className="block">{t('headline_line_3')}</span>
@@ -93,7 +95,7 @@ const Home = () => {
           target="_blank"
           className="group absolute left-1/2 -translate-x-1/2 flex flex-col items-start gap-[8px]"
         >
-          <span className="font-sans text-[11px] uppercase leading-none tracking-[1.1px] text-cream-100">
+          <span className="font-sans-regular text-[11px] uppercase leading-none tracking-[1.1px] text-cream-100">
             {t('cta')}
           </span>
           <span className="h-[1px] w-full bg-cream-100 transition-opacity group-hover:opacity-70" />
@@ -104,10 +106,10 @@ const Home = () => {
           className="ml-auto flex items-center gap-[12px]"
           aria-label={isMuted ? 'Unmute video' : 'Mute video'}
         >
-          <span className="font-sans text-[11px] leading-[1.3] text-cream-100/90">
+          <span className="font-sans-regular text-[11px] leading-[1.3] text-cream-100">
             {isMuted ? 'Sound on' : 'Sound off'}
           </span>
-          <IconSound className="text-cream-100 w-[12px]" />
+          {isMuted ? <IconSound className="text-cream-100 w-[12px]" /> : <IconMute className="text-cream-100 w-[12px]" />}
         </button>
       </div>
     </main>
