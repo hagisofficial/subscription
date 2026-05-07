@@ -64,8 +64,10 @@ const Home = () => {
 
       <div className="relative flex flex-col items-center justify-center h-full px-[1.6vw] z-10">
         <div className="flex flex-col items-center">
-          <h1 className="font-serif text-[8.4vw] lg:text-[4vw] text-cream-100 leading-[1] lg:leading-[0.9] text-center uppercase max-w-[60vw] lg:max-w-[25vw] mb-[60px]">
-            {t('headline')}
+          <h1 className="font-serif text-[8.4vw] lg:text-[4vw] text-cream-100 leading-[1] lg:leading-[0.9] text-center uppercase mb-[60px]">
+            <span className="block">{t('headline_line_1')}</span>
+            <span className="block">{t('headline_line_2')}</span>
+            <span className="block">{t('headline_line_3')}</span>
           </h1>
 
           <NewsletterForm />

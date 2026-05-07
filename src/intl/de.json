@@ -5,7 +5,9 @@
     "title": "Seite nicht gefunden"
   },
   "home": {
-    "headline": "Eine Odyssee zum beduinischen Erbe",
+    "headline_line_1": "Eine Odyssee",
+    "headline_line_2": "zum beduinischen",
+    "headline_line_3": "Erbe",
     "subtitle_line_1": "Erfahren Sie als Erstes, wann",
     "subtitle_line_2": "Hagi's Grooming Palette erscheint.",
     "placeholder": "E-Mail-Adresse",
