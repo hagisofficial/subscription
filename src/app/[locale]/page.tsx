@@ -7,7 +7,7 @@ import { useTranslations } from 'next-intl'
 import Header from '@/components/Header'
 import NewsletterForm from '@/components/NewsletterForm'
 import IconSound from '@/components/icons/icon-sound'
-import IconMute from '@/components/icons/icon-mute.tsx'
+import IconMute from '@/components/icons/icon-mute'
 
 import { MUX_PLAYBACK_IDS, MUX_THUMBNAILS } from '@/constants/mux'
 
