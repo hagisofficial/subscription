@@ -16,9 +16,9 @@ const Footer: FC = () => {
       © 2026 Hagi’s
       </span>
 
-      <div className="flex items-center gap-[16px]">
+      <div className="flex items-center gap-[4px]">
         <span className="font-sans text-[11px] uppercase tracking-[1.2px] font-medium text-darkgrey-100">Language :</span>
-        <div className="flex flex-row gap-[8px] items-center">
+        <div className="flex flex-row gap-[2px] items-center">
           {routing.locales.map((locale, _i) => {
             const isActive = locale === currentLocale
 

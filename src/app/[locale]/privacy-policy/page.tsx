@@ -50,7 +50,7 @@ const PrivacyPolicy = ({ params }: PrivacyPolicyProps) => {
             [&_p]:font-sans-regular [&_p]:text-[12px] [&_p]:font-normal
             [&_p]:leading-[1.6] [&_p]:text-darkgrey-100 [&_p]:mb-[16px]
             [&_ul]:list-disc [&_ul]:pl-[24px] [&_ul]:mb-[16px]
-            [&_li]:font-sans [&_li]:text-[12px] [&_li]:font-normal
+            [&_li]:font-sans-regular [&_li]:text-[12px] [&_li]:font-normal
             [&_li]:leading-[1.6] [&_li]:text-darkgrey-100 [&_li]:mb-[6px]
             [&_a:hover]:opacity-70
           "

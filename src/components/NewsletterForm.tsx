@@ -127,7 +127,7 @@ const NewsletterForm: FC = () => {
               <path d="M3 7.5l2.5 2.5L11 4.5" />
             </svg>
           </span>
-          <span className="font-sans text-[10px] leading-[1.3] text-white-100">
+          <span className="font-sans-regular text-[11px] leading-[1.3] text-white-100">
             {t.rich('terms', {
               terms: (chunks) => (
                 <Link
