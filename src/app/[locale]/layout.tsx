@@ -17,9 +17,18 @@ const roxborough = localFont({
 })
 
 const gtAmerica = localFont({
-  src: '../../../public/assets/subset-GTAmerica-Medium.woff2',
-  weight: '500',
-  style: 'normal',
+  src: [
+    {
+      path: '../../../public/assets/subset-GTAmerica-ExpandedRegular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../../public/assets/subset-GTAmerica-Medium.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+  ],
   variable: '--font-sans',
   display: 'swap',
 })

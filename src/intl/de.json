@@ -21,5 +21,12 @@
   },
   "terms_and_conditions": {
     "title": "Allgemeine Geschäftsbedingungen"
+  },
+  "privacy_policy": {
+    "title": "Datenschutzerklärung"
+  },
+  "legal_nav": {
+    "privacy_policy": "Datenschutz",
+    "terms_and_conditions": "AGB"
   }
 }

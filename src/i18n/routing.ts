@@ -14,5 +14,9 @@ export const routing = defineRouting({
       en: '/terms-and-conditions',
       de: '/agb',
     },
+    '/privacy-policy': {
+      en: '/privacy-policy',
+      de: '/datenschutz',
+    },
   },
 })

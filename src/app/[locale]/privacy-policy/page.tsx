@@ -4,29 +4,29 @@ import { use } from 'react'
 import Header from '@/components/Header'
 import LegalNav from '@/components/LegalNav'
 
-import TermsDE from './TermsDE'
-import TermsEN from './TermsEN'
+import PrivacyPolicyDE from './PrivacyPolicyDE'
+import PrivacyPolicyEN from './PrivacyPolicyEN'
 
-interface TermsAndConditionsProps {
+interface PrivacyPolicyProps {
   params: Promise<{ locale: string }>
 }
 
-const TermsAndConditions = ({ params }: TermsAndConditionsProps) => {
+const PrivacyPolicy = ({ params }: PrivacyPolicyProps) => {
   const { locale } = use(params)
-  const t = useTranslations('terms_and_conditions')
+  const t = useTranslations('privacy_policy')
 
   return (
     <main className="bg-cream-100 min-h-screen pt-[120px] pb-[80px] px-[6vw] lg:px-[10vw]">
       <Header variant="dark" />
 
-      <header className="border-b border-black-12 pb-[48px]">
-        <h1 className="font-serif text-[16vw] lg:text-[100px] text-center py-[16vw] lg:py-[60px] text-black-100 lg:text-nowrap leading-[1] lg:leading-[0.95] uppercase">
+      <header className="lg:border-b lg:border-black-12 lg:pb-[48px]">
+        <h1 className="font-serif text-[20px] lg:text-[100px] text-center py-[16vw] lg:py-[60px] text-black-100 lg:text-nowrap leading-[1] lg:leading-[0.95] uppercase">
           {t('title')}
         </h1>
       </header>
 
       <div className="pt-[40px] flex flex-col gap-[40px] lg:flex-row lg:gap-[80px] lg:pt-[60px]">
-        <aside className="lg:w-[200px] lg:shrink-0 lg:sticky lg:top-[120px] lg:self-start">
+        <aside className="lg:w-[200px] lg:shrink-0 lg:sticky lg:top-[120px] lg:self-start max-lg:border-b max-lg:py-[24px] max-lg:border-black-12">
           <LegalNav />
         </aside>
 
@@ -49,11 +49,11 @@ const TermsAndConditions = ({ params }: TermsAndConditionsProps) => {
             [&_a:hover]:opacity-70
           "
         >
-          {locale === 'de' ? <TermsDE /> : <TermsEN />}
+          {locale === 'de' ? <PrivacyPolicyDE /> : <PrivacyPolicyEN />}
         </article>
       </div>
     </main>
   )
 }
 
-export default TermsAndConditions
+export default PrivacyPolicy

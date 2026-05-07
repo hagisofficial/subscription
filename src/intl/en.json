@@ -21,5 +21,12 @@
   },
   "terms_and_conditions": {
     "title": "Terms and Conditions"
+  },
+  "privacy_policy": {
+    "title": "Privacy Policy"
+  },
+  "legal_nav": {
+    "privacy_policy": "Privacy Policy",
+    "terms_and_conditions": "Terms and Conditions"
   }
 }
