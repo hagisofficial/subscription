@@ -22,14 +22,14 @@ const PrivacyPolicy = ({ params }: PrivacyPolicyProps) => {
       <Header variant="dark" />
 
       <header className="lg:border-b lg:border-black-12 lg:pb-[48px]">
-        <div className="px-[6vw] lg:px-[10vw]">
+        <div className="px-[6vw]">
           <h1 className="font-serif text-[6vw] lg:text-[5vw] text-center py-[16vw] lg:py-[4vw] text-black-100 leading-[1] lg:leading-[0.95] uppercase">
             {t('title')}
           </h1>
         </div>
       </header>
 
-      <section className="px-[6vw] lg:px-[10vw]">
+      <section className="px-[6vw]">
         <div className="pt-[40px] flex flex-col gap-[40px] lg:flex-row lg:gap-[80px] lg:pt-[60px]">
           <aside className="lg:w-[200px] lg:shrink-0 lg:sticky lg:top-[120px] lg:self-start max-lg:border-b max-lg:py-[24px] max-lg:border-black-12">
             <LegalNav />

@@ -78,29 +78,35 @@ const NewsletterForm: FC = () => {
 
       <div className="flex flex-col gap-[12px]">
         <div className="flex h-[52px] items-center justify-between border border-white-100/40 px-[20px]">
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder={t('placeholder')}
-            className="w-full bg-transparent font-sans text-[14px] leading-[1.5] text-white-100 placeholder:text-white-100 focus:outline-none"
-            required
-          />
-          <button
-            type="submit"
-            disabled={status === 'loading'}
-            className="ml-[12px] shrink-0 text-cream-100 transition-opacity hover:opacity-70 disabled:opacity-40"
-            aria-label={t('submit')}
-          >
-            <IconArrow className="h-[16px] w-[16px] text-white-100" />
-          </button>
+          {status === 'success' ? (
+            <p
+              className="w-full font-sans text-[14px] leading-[1.5] text-cream-100"
+              aria-live="polite"
+            >
+              {t('success')}
+            </p>
+          ) : (
+            <>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder={t('placeholder')}
+                className="w-full bg-transparent font-sans text-[14px] leading-[1.5] text-white-100 placeholder:text-white-100 focus:outline-none"
+                required
+              />
+              <button
+                type="submit"
+                disabled={status === 'loading'}
+                className="ml-[12px] shrink-0 text-cream-100 transition-opacity hover:opacity-70 disabled:opacity-40"
+                aria-label={t('submit')}
+              >
+                <IconArrow className="h-[16px] w-[16px] text-white-100" />
+              </button>
+            </>
+          )}
         </div>
 
-        {status === 'success' && (
-          <p className="font-sans-regular text-[10px] leading-[1.3] text-cream-100">
-            {t('success')}
-          </p>
-        )}
         {status === 'error' && (
           <p className="font-sans-regular text-[10px] leading-[1.3] text-cream-100">
             {t('error')}

@@ -15,7 +15,7 @@
     "submit": "Subscribe",
     "terms": "By providing your email address, you agree to our <terms>Terms and Conditions</terms> and <privacy>Privacy Policy</privacy>.",
     "cta": "Continue to Barbering Site",
-    "success": "Thank you.",
+    "success": "Success.",
     "error": "Something went wrong."
   },
   "terms_and_conditions": {
