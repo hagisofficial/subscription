@@ -17,19 +17,18 @@ const roxborough = localFont({
 })
 
 const gtAmerica = localFont({
-  src: [
-    {
-      path: '../../../public/assets/subset-GTAmerica-ExpandedRegular.woff2',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../../../public/assets/subset-GTAmerica-Medium.woff2',
-      weight: '500',
-      style: 'normal',
-    },
-  ],
+  src: '../../../public/assets/subset-GTAmerica-Medium.woff2',
+  weight: '500',
+  style: 'normal',
   variable: '--font-sans',
+  display: 'swap',
+})
+
+const gtAmericaExtended = localFont({
+  src: '../../../public/assets/subset-GTAmerica-ExtendedRegular.woff2',
+  weight: '400',
+  style: 'normal',
+  variable: '--font-sans-extended',
   display: 'swap',
 })
 
@@ -62,7 +61,7 @@ const RootLayout: FC<RootLayoutProps> = async ({ children, params }) => {
   return (
     <html
       lang={locale}
-      className={`${roxborough.variable} ${gtAmerica.variable}`}
+      className={`${roxborough.variable} ${gtAmerica.variable} ${gtAmericaExtended.variable}`}
     >
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>

@@ -12,9 +12,7 @@
     "subtitle_line_2": "Hagi's Grooming Palette arrives.",
     "placeholder": "Email Address",
     "submit": "Subscribe",
-    "terms_prefix": "I agree to the",
-    "terms_link": "Terms and conditions",
-    "terms_suffix": "of Hagi's",
+    "terms": "By providing your email address, you agree to our <terms>Terms and Conditions</terms> and <privacy>Privacy Policy</privacy>.",
     "cta": "Continue to Barbering Site",
     "success": "Thank you.",
     "error": "Something went wrong."

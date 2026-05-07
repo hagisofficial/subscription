@@ -12,9 +12,7 @@
     "subtitle_line_2": "Hagi's Grooming Palette erscheint.",
     "placeholder": "E-Mail-Adresse",
     "submit": "Abonnieren",
-    "terms_prefix": "Ich stimme den",
-    "terms_link": "Allgemeinen Geschäftsbedingungen",
-    "terms_suffix": "von Hagi's zu",
+    "terms": "Durch Angabe Ihrer E-Mail-Adresse stimmen Sie unseren <terms>Allgemeinen Geschäftsbedingungen</terms> und unserer <privacy>Datenschutzerklärung</privacy> zu.",
     "cta": "Weiter zur Barbershop-Seite",
     "success": "Danke, Sie stehen auf der Liste.",
     "error": "Etwas ist schief gelaufen. Bitte versuchen Sie es erneut."

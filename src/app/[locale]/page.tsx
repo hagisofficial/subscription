@@ -24,8 +24,21 @@ const Home = () => {
   }, [])
 
   useEffect(() => {
-    if (desktopVideoRef.current) desktopVideoRef.current.muted = isMuted
-    if (mobileVideoRef.current) mobileVideoRef.current.muted = isMuted
+    const mq = window.matchMedia('(min-width: 1200px)')
+
+    const applyMute = () => {
+      const isDesktop = mq.matches
+      if (desktopVideoRef.current) {
+        desktopVideoRef.current.muted = isDesktop ? isMuted : true
+      }
+      if (mobileVideoRef.current) {
+        mobileVideoRef.current.muted = isDesktop ? true : isMuted
+      }
+    }
+
+    applyMute()
+    mq.addEventListener('change', applyMute)
+    return () => mq.removeEventListener('change', applyMute)
   }, [isMuted])
 
   return (

@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl'
 import { use } from 'react'
 
+import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import LegalNav from '@/components/LegalNav'
 
@@ -16,19 +17,23 @@ const PrivacyPolicy = ({ params }: PrivacyPolicyProps) => {
   const t = useTranslations('privacy_policy')
 
   return (
-    <main className="bg-cream-100 min-h-screen pt-[120px] pb-[80px] px-[6vw] lg:px-[10vw]">
+    <main className="bg-cream-100 min-h-screen pt-[120px] pb-[80px]">
       <Header variant="dark" />
 
       <header className="lg:border-b lg:border-black-12 lg:pb-[48px]">
-        <h1 className="font-serif text-[9vw] lg:text-[100px] text-center py-[16vw] lg:py-[60px] text-black-100 lg:text-nowrap leading-[1] lg:leading-[0.95] uppercase">
-          {t('title')}
-        </h1>
+        <div className="px-[6vw] lg:px-[10vw]">
+          <h1 className="font-serif text-[9vw] lg:text-[100px] text-center py-[16vw] lg:py-[60px] text-black-100 lg:text-nowrap leading-[1] lg:leading-[0.95] uppercase">
+            {t('title')}
+          </h1>
+        </div>
       </header>
 
-      <div className="pt-[40px] flex flex-col gap-[40px] lg:flex-row lg:gap-[80px] lg:pt-[60px]">
-        <aside className="lg:w-[200px] lg:shrink-0 lg:sticky lg:top-[120px] lg:self-start max-lg:border-b max-lg:py-[24px] max-lg:border-black-12">
-          <LegalNav />
-        </aside>
+      <section className="px-[6vw] lg:px-[10vw]">
+        <div className="pt-[40px] flex flex-col gap-[40px] lg:flex-row lg:gap-[80px] lg:pt-[60px]">
+          <aside className="lg:w-[200px] lg:shrink-0 lg:sticky lg:top-[120px] lg:self-start max-lg:border-b max-lg:py-[24px] max-lg:border-black-12">
+            <LegalNav />
+          </aside>
+
 
         <article
           className="
@@ -51,7 +56,10 @@ const PrivacyPolicy = ({ params }: PrivacyPolicyProps) => {
         >
           {locale === 'de' ? <PrivacyPolicyDE /> : <PrivacyPolicyEN />}
         </article>
-      </div>
+        </div>
+
+        <Footer />
+      </section>
     </main>
   )
 }

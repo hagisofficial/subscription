@@ -115,14 +115,24 @@ const NewsletterForm: FC = () => {
             className="h-[14px] w-[14px] shrink-0 appearance-none border border-white-100/40 bg-transparent checked:bg-white-100/20"
           />
           <span className="font-sans text-[10px] leading-[1.3] text-grey-100">
-            {t('terms_prefix')}{' '}
-            <Link
-              href="/terms-and-conditions"
-              className="underline hover:text-cream-100"
-            >
-              {t('terms_link')}
-            </Link>{' '}
-            {t('terms_suffix')}
+            {t.rich('terms', {
+              terms: (chunks) => (
+                <Link
+                  href="/terms-and-conditions"
+                  className="underline hover:text-cream-100"
+                >
+                  {chunks}
+                </Link>
+              ),
+              privacy: (chunks) => (
+                <Link
+                  href="/privacy-policy"
+                  className="underline hover:text-cream-100"
+                >
+                  {chunks}
+                </Link>
+              ),
+            })}
           </span>
         </label>
       </div>
