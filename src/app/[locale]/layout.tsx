@@ -28,7 +28,7 @@ export const metadata = {
   title: "Hagi's - Subscription",
   description: 'Subscribe to be the first to know when we launch.',
   icons: {
-    icon: '/assets/favicon.ico',
+    icon: '/assets/favicon.png',
   },
 }
 
