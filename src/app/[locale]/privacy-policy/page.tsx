@@ -17,12 +17,13 @@ const PrivacyPolicy = ({ params }: PrivacyPolicyProps) => {
   const t = useTranslations('privacy_policy')
 
   return (
+    <>
     <main className="bg-cream-100 min-h-screen pt-[120px] pb-[80px]">
       <Header variant="dark" />
 
       <header className="lg:border-b lg:border-black-12 lg:pb-[48px]">
         <div className="px-[6vw] lg:px-[10vw]">
-          <h1 className="font-serif text-[9vw] lg:text-[100px] text-center py-[16vw] lg:py-[60px] text-black-100 lg:text-nowrap leading-[1] lg:leading-[0.95] uppercase">
+          <h1 className="font-serif text-[6vw] lg:text-[5vw] text-center py-[16vw] lg:py-[4vw] text-black-100 leading-[1] lg:leading-[0.95] uppercase">
             {t('title')}
           </h1>
         </div>
@@ -58,9 +59,10 @@ const PrivacyPolicy = ({ params }: PrivacyPolicyProps) => {
         </article>
         </div>
 
-        <Footer />
       </section>
     </main>
+        <Footer />
+    </>
   )
 }
 
