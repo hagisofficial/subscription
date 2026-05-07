@@ -76,7 +76,8 @@ const Home = () => {
 
       <div className="absolute bottom-0 left-0 right-0 flex items-center py-[32px] px-[1.6vw] z-20">
         <a
-          href="#"
+          href="http://hagisbarbering.com"
+          target="_blank"
           className="group absolute left-1/2 -translate-x-1/2 flex flex-col items-start gap-[8px]"
         >
           <span className="font-sans text-[11px] uppercase leading-none tracking-[1.1px] text-cream-100">
