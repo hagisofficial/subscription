@@ -79,7 +79,7 @@ const NewsletterForm: FC = () => {
       onSubmit={handleSubmit}
       className="flex w-full max-w-[378px] flex-col gap-[40px] md:max-w-[378px]"
     >
-      <p className="text-center font-sans text-[10px] uppercase leading-[1.2] tracking-[0.4px] text-cream-100 md:text-[12px] md:tracking-[0.48px]">
+      <p className="text-center font-sans text-[11px] uppercase leading-[1.2] tracking-[0.4px] text-cream-100 md:text-[12px] md:tracking-[0.48px]">
         {t('subtitle_line_1')}
         <br />
         {t('subtitle_line_2')}
