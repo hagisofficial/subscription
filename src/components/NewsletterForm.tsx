@@ -77,9 +77,9 @@ const NewsletterForm: FC = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex w-full max-w-[378px] flex-col gap-[40px] md:max-w-[378px]"
+      className="flex w-full max-w-[378px] flex-col gap-[40px] md:max-w-[378px] max-lg:px-[4px]"
     >
-      <p className="text-center font-sans text-[10px] uppercase leading-[1.2] tracking-[0.4px] text-cream-100 md:text-[12px] md:tracking-[0.48px]">
+      <p className="text-center font-sans-regular text-[10px] uppercase leading-[1.2] tracking-[0.4px] text-cream-100 md:text-[12px] md:tracking-[0.48px]">
         {t('subtitle_line_1')}
         <br />
         {t('subtitle_line_2')}
@@ -93,7 +93,7 @@ const NewsletterForm: FC = () => {
         >
           {status === 'success' ? (
             <p
-              className="w-full font-sans text-[14px] leading-[1.5] text-cream-100"
+              className="w-full font-sans-regular text-[14px] leading-[1.5] text-cream-100"
               aria-live="polite"
             >
               {t('success')}
@@ -105,7 +105,7 @@ const NewsletterForm: FC = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder={t('placeholder')}
-                className="w-full bg-transparent font-sans text-[14px] leading-[1.5] text-white-100 placeholder:text-white-100 focus:outline-none"
+                className="w-full bg-transparent font-sans-regular text-[14px] leading-[1.5] text-white-100 placeholder:text-white-100 focus:outline-none"
                 required
               />
               <button

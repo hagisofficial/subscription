@@ -69,11 +69,11 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 flex items-center py-[32px] px-[1.6vw] z-20">
+      <div className="absolute bottom-0 left-0 right-0 flex items-center py-[32px] px-[2vw] z-20">
         <a
           href="http://hagisbarbering.com"
           target="_blank"
-          className="group absolute left-1/2 -translate-x-1/2 flex flex-col items-start gap-[8px]"
+          className="group absolute lg:left-1/2 lg:-translate-x-1/2 flex flex-col items-start gap-[8px] left-[20px]"
         >
           <span className="font-sans-regular text-[11px] uppercase leading-none tracking-[1.1px] text-cream-100">
             {t('cta')}
@@ -83,7 +83,7 @@ const Home = () => {
 
         <button
           onClick={() => setIsMuted(!isMuted)}
-          className="ml-auto flex items-center gap-[12px]"
+          className="ml-auto flex max-lg:mr-[20px] items-center gap-[12px]"
           aria-label={isMuted ? 'Unmute video' : 'Mute video'}
         >
           <span className="font-sans-regular text-[11px] leading-[1.3] text-cream-100">
