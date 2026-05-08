@@ -13,12 +13,21 @@ const NewsletterForm: FC = () => {
   const [email, setEmail] = useState('')
   const [agreed, setAgreed] = useState(false)
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const [showTermsError, setShowTermsError] = useState(false)
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
 
-    if (!email || !agreed || status === 'loading') return
+    if (status === 'loading') return
 
+    if (!agreed) {
+      setShowTermsError(true)
+      return
+    }
+
+    if (!email) return
+
+    setShowTermsError(false)
     setStatus('loading')
 
     try {
@@ -77,7 +86,11 @@ const NewsletterForm: FC = () => {
       </p>
 
       <div className="flex flex-col gap-[12px]">
-        <div className="flex h-[52px] items-center justify-between border border-white-100/40 px-[20px]">
+        <div
+          className={`flex h-[52px] items-center justify-between border px-[20px] ${
+            status === 'error' ? 'border-burgundy-100' : 'border-white-100/40'
+          }`}
+        >
           {status === 'success' ? (
             <p
               className="w-full font-sans text-[14px] leading-[1.5] text-cream-100"
@@ -113,13 +126,27 @@ const NewsletterForm: FC = () => {
           </p>
         )}
 
+        {showTermsError && (
+          <p
+            className="font-sans-regular text-[10px] leading-[1.3] text-cream-100"
+            aria-live="polite"
+          >
+            {t('terms_required')}
+          </p>
+        )}
+
         <label className="flex cursor-pointer items-center gap-[8px]">
           <span className="relative flex h-[14px] w-[14px] shrink-0 items-center justify-center">
             <input
               type="checkbox"
               checked={agreed}
-              onChange={(e) => setAgreed(e.target.checked)}
-              className="peer h-full w-full appearance-none border border-white-100/40 bg-transparent checked:border-white-100 checked:bg-white-100"
+              onChange={(e) => {
+                setAgreed(e.target.checked)
+                if (e.target.checked) setShowTermsError(false)
+              }}
+              className={`peer h-full w-full appearance-none border bg-transparent checked:border-white-100 checked:bg-white-100 ${
+                showTermsError ? 'border-burgundy-100' : 'border-white-100/40'
+              }`}
             />
             <svg
               viewBox="0 0 14 14"

@@ -16,7 +16,8 @@
     "terms": "Durch Angabe Ihrer E-Mail-Adresse stimmen Sie unseren <terms>Allgemeinen Geschäftsbedingungen</terms> und unserer <privacy>Datenschutzerklärung</privacy> zu.",
     "cta": "Weiter zur Barbershop-Seite",
     "success": "Erfolg.",
-    "error": "Etwas ist schief gelaufen. Bitte versuchen Sie es erneut."
+    "error": "Etwas ist schief gelaufen. Bitte versuchen Sie es erneut.",
+    "terms_required": "Bitte akzeptieren Sie die Allgemeinen Geschäftsbedingungen und die Datenschutzerklärung."
   },
   "terms_and_conditions": {
     "title": "Allgemeine Geschäftsbedingungen"

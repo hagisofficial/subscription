@@ -16,7 +16,8 @@
     "terms": "By providing your email address, you agree to our <terms>Terms and Conditions</terms> and <privacy>Privacy Policy</privacy>.",
     "cta": "Continue to Barbering Site",
     "success": "Success.",
-    "error": "Something went wrong."
+    "error": "Something went wrong.",
+    "terms_required": "Please accept the Terms and Conditions and Privacy Policy."
   },
   "terms_and_conditions": {
     "title": "Terms and Conditions"
